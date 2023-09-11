@@ -1,0 +1,267 @@
+<?php
+include_once 'C:\xampp\htdocs\Sarra_Reclamation\Model\Reclamation.php';
+include_once 'C:\xampp\htdocs\Sarra_Reclamation\Controller\ReclamationC.php';
+
+    $error = "";
+
+    // create avis
+    $reclamation = null;
+
+    // create an instance of the controller
+    $reclamationc = new ReclamationC();
+    if (
+        isset($_POST["cin"]) &&
+		isset($_POST["texte"])
+    ) {
+        if (
+            !empty($_POST["cin"]) &&
+			!empty($_POST["texte"])
+        ) {
+            $reclamation = new Reclamation(
+                $_POST['cin'],
+				$_POST['texte']
+            );
+            $reclamationc->ajouterreclamation($reclamation);
+            header('Location:help.php');
+        }
+        else
+            $error = "Missing information";
+    }
+
+    
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Need Help?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="pictures/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>   
+</head>
+<body>
+<style>
+
+.button {
+			background-color: #af082c;
+			color: white;
+			padding: 7px 5px;
+			text-align: center;
+			display: inline-block;
+			font-size: 16px;
+			margin: 30px;
+			cursor: pointer;
+			border: none;
+			border-radius: 5px;
+            box-shadow: 0 0 8px #550B17;
+		}
+form {
+	margin: 20px auto;
+    padding:  30px ;
+	width: 80%;
+    color:black;
+    cursor: pointer;
+    box-shadow: 0 0 8px #550B17;
+}
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+input[type="text"], input[type="text"], textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+    
+}
+input[type="submit"] {
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+    box-shadow: 0 0 8px #550B17;
+   
+}
+input[type="submit"]:hover {
+	background-color: #ccc;
+    align-items: center;
+}
+#comments {
+	margin: 20px auto;
+	width: 80%;
+}
+h4{
+	margin :20px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    
+}
+/*Footer*/
+
+footer{
+    width: 100%;
+    background: #eaeaea;
+}
+
+footer .footer_main{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+footer .footer_main .tag{
+    margin: 10px 0;
+    cursor: pointer;
+    color: #af082c;
+}
+
+footer .footer_main .tag img{
+    width: 100px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+footer .footer_main .tag p{
+    width: 250px;
+    line-height: 22px;
+    text-align: justify;
+    cursor: pointer;
+}
+
+footer .footer_main .tag h1{
+    font-size: 25px;
+    margin: 25px 0;
+    color: #af082c;
+    cursor: pointer;
+}
+
+footer .footer_main .tag a{
+    display: block;
+    color: #550B17;
+    text-decoration: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+footer .footer_main .tag i{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+footer .footer_main .tag .social_link i{
+    margin: 0 5px;
+    cursor: pointer;
+    color: #550B17;
+}
+footer .footer_main .tag .social_link i :hover{
+    margin: 0 5px;
+    color: #089da1;
+    cursor: pointer;
+}
+
+footer .footer_main .tag .search{
+    width: 230px;
+    height: 30px;
+    background: rgba(202,202,202);
+    border-radius: 25px;
+}
+
+footer .footer_main .tag .search input{
+    width: 200px;
+    padding: 2px 0;
+    position: relative;
+    top: 17%;
+    left: 6%;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: none;
+    cursor: pointer;
+    
+}
+
+footer .footer_main .tag .search button{
+    padding: 7px 15px;
+    background: #550B17;
+    border: none;
+    margin-top: 15px;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+footer .end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: #000;
+    cursor: pointer;
+}
+
+footer .end span{
+    color: #550B17;
+    margin-left: 10px;
+    cursor: pointer;
+}
+</style>
+    </style>
+    <div class ="search-form">
+
+        <button class="button" onclick="location.href='BOOKLY.html'">HOME</button>
+       <h4><strong> "Let us know if you got any problem and we will give you a helping hand and guide you towards the solution you need."</strong></h4>
+        
+        
+    <!-- Comment form -->
+    <form method="post">
+    <input type="text" placeholder="ID" maxlength="10" name="id" required>
+            <input type="text" maxlength="8" placeholder="cin" name="cin" required>
+            <textarea id="comment" placeholder="Comments" name="texte" required></textarea>
+        <input type="submit" value="Send" style="background-color: #af082c;" >
+    </form>
+    </div>
+    <!--Footer-->
+
+<footer>
+    <div class="footer_main">
+
+        <div class="tag">
+            <img src="pictures/books.png">
+
+        </div>
+
+        <div class="tag">
+            <h1>Contact Info</h1>
+            <a href="#"><i class="fa-solid fa-phone"></i>+21652308505</a>
+            <a href="#"><i class="fa-solid fa-phone"></i>+216 32 444 699</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i>bookly@gmail.com</a>
+            
+        </div>
+
+        <div class="tag">
+            <h1>Follow Us</h1>
+            <div class="social_link">
+                <a href="https://www.facebook.com/" class="fa-brands fa-facebook-f" style="color:#550B17; ">
+                <a href="https://www.instagram.com/" class="fa-brands fa-instagram"  style="color:#550B17;">
+                <a href="https://fr.linkedin.com/" class="fa-brands fa-linkedin-in"style="color:#550B17;"></a>
+            </div>
+            
+        </div>         
+        
+    </div>
+
+    <p class="end">Design By<span><i class="fa-regular fa-books"></i> BOOKLY</span></p>
+
+</footer>
+</body>
+</html>

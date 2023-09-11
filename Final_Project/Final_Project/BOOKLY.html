@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="pictures/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>    
+</head>
+<body>
+
+    <style>
+ *{
+    font-family: 'Poppins' , sans-serif;
+    margin: 0 ; padding: 0;
+    box-sizing: border-box;
+    outline: none ;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all.2s linear;
+    transition: width none;
+
+}
+section{
+     width: 100%;
+     height: 100vh;
+    background-image: url("pictures/bg.png");
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    
+
+
+}
+section nav {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    box-shadow: 0 0 10px #af082c;
+    background: #fff;
+    
+    line-height: 1.5;
+    
+    z-index: 10;
+
+}
+section nav .logo {
+    width: 100px;
+    cursor: pointer;
+    margin: 8px 0;
+}
+section nav .searh-form{
+    width: 50rem;
+    height: 50rem;
+    border: var(--border);
+    overflow: hidden;
+    background: rgb(113, 46, 46);
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+} 
+   section nav .search-form input{
+
+    padding: 0 ;
+    height: 10ex;
+    width:  20ex;
+    text-transform: none;
+    color: black;
+}
+section nav .search-form label{
+    font-size: 2.5rem;
+    padding-left: 1.5rem;
+    color: var(#550B17);
+    cursor: pointer;
+}
+
+section nav ul{
+    list-style: none;
+
+}
+   
+section nav li{
+    display: inline-block;
+    padding: 0 10px;
+
+    
+}
+ 
+section nav li a{
+    text-decoration :  none;
+    color: #000;
+    padding: 0 10px; 
+}
+section nav li a:hover{
+    color: #af082c
+}
+
+    
+section nav .social_icon i:hover {
+    color:#af082c;
+    cursor: pointer;
+}
+section .main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 10%;
+}
+
+section .main h1{
+    position: relative;
+    font-size: 55px;
+    top: 80px;
+    right: 40%;
+}
+
+section .main h1 span{
+    color: #af082c;
+}
+section .main p span{
+    color: #af082c;
+}
+section .main p{
+    width: 650px;
+    text-align: justify;
+    line-height: 22px;
+    position: relative;
+    top: 125px;
+    right : 40%;
+    font-size: 20px;
+    font-style: arial;
+}
+
+section .main .main_tag .main_btn{
+    
+    padding: 10px 20px;
+    position: relative;
+    top: 200px;
+    left: 25px;
+    color: #fff;
+    text-decoration: none;
+}
+
+section .main .main_img img{
+    width: 780px;
+    position: relative;
+    top: 90px;
+    left: 50%;
+
+
+}
+.services {
+    width: 100%;
+    height: auto;
+    margin :35px 0;
+}
+.services .services_box{
+    width: 95%;
+    display: flex;
+    margin : 0 auto;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.services .services_box .services_card{
+    text-align: center;
+    width: 310px;
+    height: auto;
+    box-shadow: 0 0 8px #550B17;
+    padding: 15px 10px;
+}
+
+.services .services_box .services_card i{
+    color: #af082c;
+    font-size: 45px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.services .services_box .services_card h3{
+    margin-bottom: 10px;
+}
+
+
+.about{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about .about_image img{
+    width: 800px;
+}
+
+.about .about_tag h1{
+    font-size: 50px;
+    position: relative;
+    bottom: 35px;
+}
+
+.about .about_tag p{
+    line-height: 22px;
+    width: 650px;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.about .about_tag .about_btn{
+    padding: 10px 20px;
+    background: #af082c;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    top: 50px;
+}
+/*Books*/
+
+.featured_boks{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+
+.featured_boks h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 45px;
+    color: #af082c;
+}
+
+.featured_boks .featured_book_box{
+    width: 95%;
+    height: 60vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.featured_boks .featured_book_box .featured_book_card{
+    width: 250px;
+    height: 420px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #919191;
+    margin: auto 20px;
+}
+
+.featured_boks .featured_book_box .featured_book_card:hover{
+    box-shadow: 0 0 5px #550B17;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_img img{
+    width: 150px;
+    cursor: pointer;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag h2{
+    margin: 12px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .writer{
+    color: #919191;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .categories{
+    color: #af082c;
+    margin-top: 8px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .book_price{
+    margin-top: 8px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .book_price sub{
+    font-weight: 100;
+    padding: 0 5px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .f_btn{
+    padding: 8px 20px;
+    border: 2px solid #af082c;
+    text-decoration: none;
+    color: #000;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+}
+
+::-webkit-scrollbar-thumb{
+    background: gray;
+    border-radius: 10px;
+}
+
+
+
+
+/*arrivals*/
+
+.arrivals{
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 35px;
+}
+
+.arrivals h1{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 35px;
+    color: #af082c;
+}
+
+.arrivals .arrivals_box{
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 25px 0;
+}
+
+.arrivals .arrivals_box .arrivals_card{
+    width: 250px;
+    height: 340px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #919191;
+    margin: auto 20px;
+
+}
+
+.arrivals .arrivals_box .arrivals_card:hover{
+    box-shadow: 0 0 5px #550B17;
+}
+
+.arrivals .arrivals_box .arrivals_card .arrivals_image{
+    width: 150px;
+    height: 220px;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.arrivals .arrivals_box .arrivals_card .arrivals_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+}
+
+.arrivals .arrivals_box .arrivals_card:hover .arrivals_image img{
+    transform: scale(1.1);
+}
+
+.arrivals .arrivals_box .arrivals_card .arrivals_tag p{
+    font-family: queen of camelot;
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.arrivals .arrivals_box .arrivals_card .arrivals_tag .arrivals_icon{
+    color: #af082c;
+    margin-bottom: 18px;
+}
+
+.arrivals .arrivals_box .arrivals_card .arrivals_tag .arrivals_btn{
+    padding: 8px 20px;
+    border: 2px solid #af082c;
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+
+/*reviews*/
+
+.reviews{
+    width: 100%;
+    height: auto;
+    margin-bottom: 35px;
+}
+
+.reviews h1{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 55px;
+    color: #af082c;
+}
+
+.reviews .review_box{
+    width: 95%;
+    height: 50vh;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviews .review_box .review_card{
+    width: 400px;
+    height: 320px;
+    box-shadow: 0 0 8px #550B17;
+    padding: 15px;
+    margin: 0 12px;
+}
+
+.reviews .review_box .review_card i{
+    float: right;
+    font-size: 120px;
+    position: relative;
+    bottom: 20px;
+    color: #eaeaea;
+}
+
+.reviews .review_box .review_card .card_top img{
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.reviews .review_box .review_card .card p{
+    margin: 10px 0 10px 0;
+    text-align: justify;
+    line-height: 22px;
+}
+
+.reviews .review_box .review_card .card .review_icon i{
+    font-size: 16px;
+    float: left;
+    margin-top: 20px;
+    color: #550B17;
+    padding: 0 1px;
+}
+/*Banner*/
+
+.banner{
+    width: 100%;
+    height: 50vh;
+    background-image: url(image/banner.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.banner .banner_btn{
+    padding: 8px 20px;
+    background: #089da1;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    top: 70%;
+    left: 7%;
+}
+
+
+
+
+/*Blog*/
+
+.blog{
+    width: 100%;
+    height: auto;
+    margin: 25px 0;
+}
+
+.blog h1{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #af082c;
+}
+
+.blog .blog_box{
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.blog .blog_box .blog_card{
+    margin: 0 auto;
+    width: 450px;
+    height: auto;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.blog .blog_box .blog_card .blog_img{
+    width: 450px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.blog .blog_box .blog_card .blog_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.blog .blog_box .blog_card .blog_tag{
+    padding: 20px;
+}
+
+.blog .blog_box .blog_card .blog_tag h2{
+    color: #af082c;
+}
+
+.blog .blog_box .blog_card .blog_tag p{
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 22px;
+}
+
+.blog .blog_box .blog_card .blog_tag .blog_icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #550B17;
+    cursor: pointer;
+}
+
+
+
+
+
+/*Footer*/
+
+footer{
+    width: 100%;
+    background: #eaeaea;
+}
+
+footer .footer_main{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+footer .footer_main .tag{
+    margin: 10px 0;
+    cursor: pointer;
+    color: #af082c;
+}
+
+footer .footer_main .tag img{
+    width: 100px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+footer .footer_main .tag p{
+    width: 250px;
+    line-height: 22px;
+    text-align: justify;
+    cursor: pointer;
+}
+
+footer .footer_main .tag h1{
+    font-size: 25px;
+    margin: 25px 0;
+    color: #af082c;
+    cursor: pointer;
+}
+
+footer .footer_main .tag a{
+    display: block;
+    color: #550B17;
+    text-decoration: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+footer .footer_main .tag i{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+footer .footer_main .tag .social_link i{
+    margin: 0 5px;
+    cursor: pointer;
+    color: #550B17;
+}
+footer .footer_main .tag .social_link i :hover{
+    margin: 0 5px;
+    color: #089da1;
+    cursor: pointer;
+}
+
+footer .footer_main .tag .search{
+    width: 230px;
+    height: 30px;
+    background: rgba(202,202,202);
+    border-radius: 25px;
+}
+
+footer .footer_main .tag .search input{
+    width: 200px;
+    padding: 2px 0;
+    position: relative;
+    top: 17%;
+    left: 6%;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: none;
+    cursor: pointer;
+    margin: 3px;
+    
+}
+
+footer .footer_main .tag .search button{
+    padding: 7px 15px;
+    background: #550B17;
+    border: none;
+    margin-top: 15px;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+footer .end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: #000;
+    cursor: pointer;
+}
+
+footer .end span{
+    color: #550B17;
+    margin-left: 10px;
+    cursor: pointer;
+}
+/*search bar*/
+.search-box 
+{
+    position:absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+
+}
+.search-box :hover>.search-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+.search-box :hover>.search-btn{
+    background: white;
+
+}
+.search-btn {
+color: #550B17;
+float: right;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+transition: 0.4s;
+
+
+}
+.search-txt
+{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 240px;
+
+}
+/*menu */
+.select-menu
+{
+    width: 300px;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    
+}
+.select-menu .select{
+  background-color: #201e1e;
+  padding: 20px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/*pub*/
+.carousel-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel {
+  width: 400px;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.carousel-item {
+  display: none;
+}
+
+.carousel-item.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 700px;
+}
+.carousel-item h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.carousel-item .author {
+    color: #919191;
+}
+.carousel-item .genre { 
+    color: #af082c;
+}
+.carousel-item span {
+    margin-bottom: 5px;
+}
+
+.carouselItem {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.options-list{
+  position: absolute;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  margin-top: 14px;
+  padding: 0 20px;
+  max-height: 180px;
+  overflow-y: auto;
+  transition: .4s linear .2s;
+  height: 0;
+}
+
+.option{
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 14px;
+  transition: .3s ease-in-out;
+}
+
+.option:hover,
+.option.selected{
+  color: #af082c;
+}
+
+.options-list::-webkit-scrollbar{
+  width: 4px;
+  background-color: #eee;
+}
+ .options-list::-webkit-scrollbar-thumb{
+  background-color: #550B17;
+}
+
+ .options-list.active{
+  height: 180px;
+}
+.button {
+			background-color: #af082c;
+			color: white;
+			padding: 7px 5px;
+			text-align: center;
+			display: inline-block;
+			font-size: 16px;
+			margin: 30px;
+			cursor: pointer;
+			border: none;
+			border-radius: 5px;
+            box-shadow: 0 0 8px #550B17;
+		}
+
+
+
+</style>
+
+</div>
+    <section>
+
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="pictures/bookly.png"> 
+                
+                
+            </div>
+            <ul>
+                <i class="fa-solid fa-house" style="color: #550B17;"></i>
+                <li><a href="BOOKLY.html">Home</a></li>
+                <i class="fa-solid fa-book" style="color: #550B17;"></i>
+                <li><a href="about_us.html">About us </a></li>
+                <i class="fa-solid fa-circle-info" style="color: #550B17;"></i>
+                <li><a href="help.html">Help</a></li>
+                <i class="fa-regular fa-calendar-days" style="color: #550B17;"></i>
+                <li><a href="Event.html">Event</a></li>
+
+               
+            </ul>
+            <div class ="search-form">
+        <input class="search-txt" type="search" name ="" placeholder="search here.. "  id ="search-box">
+        <a class="search-btn" href="#"></a>
+        <a href="#" class="fa-solid fa-magnifying-glass" style="color:#550B17;"></a>
+        <a href="custumors_reviews.html" class="fa-solid fa-user" style="color: #550B17;">
+            <a class="btn btn-lg btn-primary rounded-pill" href="../ajouterAvis.html"></a>
+        <a href="shop.html" class="fas fa-shopping-cart" style="color:#550B17; "></a>
+        
+        <button class="button" onclick="location.href='login.html'">LOG IN </button>
+        <button class="button" onclick="location.href='sign.html'">SIGN UP  </button>
+                
+            
+            </div>
+        </nav>
+        <div class="main">
+            <div class="main_tag">
+                <h1>Welcome To <span> Bookly</span></h1>
+                <p>Experience the joy of reading with <strong><span>BOOKLY</span></strong> <br> From eBooks and audiobooks to hardcovers and paperbacks, we offer a variety of formats to suit your reading preferences.</p>
+                <a href ="#" class="main_btn" Learn More ></a>
+                <div class="main_img">
+                    <img src ="pictures/table.png" >
+                </div>
+            </div>
+        </div>
+        </div>
+    
+    </section>
+    <div class="select-menu">
+        <div class="select">
+          <span>Select Language</span>
+          <i class="fas fa-angle-down"></i>
+        </div>
+        <div class="options-list">
+          <div class="option">English</div>
+          <div class="option">Arabic</div>
+          <div class="option">Hindi</div>
+          <div class="option">Spanish</div>
+          <div class="option">French</div>
+          <div class="option">Japanese</div>
+          <div class="option">Korean</div>
+        </div>
+      </div>
+    <!--Books-->
+    <div class="featured_boks">
+        <h1>Books On Discount</h1>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img class="carouselItem" src="pictures/trust hernan diaz 22.jfif" alt="img1">
+                    <h2>Trust</h2>
+                    <span class="author">Hernan Diaz</span>
+                    <span class="genre">Literary Fiction</span>
+                    <span>Release Year:2022</span>
+                    <span>Discount: <b>22%</b></span>
+                    <span>Price After Discount: <b>39D</b></span>
+                </div>
+                <div class="carousel-item">
+                    <img class="carouselItem" src="pictures/matrix lauren groff 21.jfif" alt="img2">
+                    <h2>Matrix</h2>
+                    <span class="author">Lauren Groff</span>
+                    <span class="genre">Histroy</span>
+                    <span>Release Year:2021</span>
+                    <span>Discount: <b>21%</b></span>
+                    <span>Price After Discount: <b>39.5D</b></span>
+                </div>
+                <div class="carousel-item">
+                    
+                    <img class="carouselItem" src="pictures/hamnet maggieo'farrell 20.jfif" alt="img3">
+                    <h2>Hamnet</h2>
+                    <span class="author">Maggie O'Farrell</span>
+                    <span class="genre">Historical Fiction</span>
+                    <span>Release Year:2020</span>
+                    <span>Discount: <b>20%</b></span>
+                    <span>Price After Discount: <b>40D</b></span>
+                </div>
+                <div class="carousel-item">
+                    <img class="carouselItem" src="pictures/trust exercice susan choi 19.jfif" alt="img4">
+                    <h2>Trust Exercice</h2>
+                    <span class="author">Susan Choi</span>
+                    <span class="genre">Literary Fiction</span>
+                    <span>Release Year:2019</span>
+                    <span>Discount: <b>19%</b></span>
+                    <span>Price After Discount: <b>40.5D</b></span>
+                </div>
+                <div class="carousel-item">
+                    <img class="carouselItem" src="pictures/asymmetry lisa halliday 18.jfif" alt="img5">
+                    <h2>Asymmetry</h2>
+                    <span class="author">Lisa Halliday</span>
+                    <span class="genre">Literary Fiction</span>
+                    <span>Release Year:2018</span>
+                    <span>Discount: <b>18%</b></span>
+                    <span>Price After Discount: <b>41D</b></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="featured_boks">
+
+        <h1>Featured Books</h1>
+
+        <div class="featured_book_box">
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/November 9.jpeg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>November 9</h2>
+                    <p class="writer">Colleen Hoover</p>
+                    <div class="categories">Comedy, Romance</div>
+                    <p class="book_price">25.50D<sub><del>28.60dD</del></sub></p>
+                    
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/the-girl-he-used-to-know-1.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>THE GIRL HE USED TO KNOW</h2>
+                    <p class="writer">Tracey Gravis Graves</p>
+                    <div class="categories">Romance</div>
+                    <p class="book_price">25D<sub><del>30.5D</del></sub></p>
+                    
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/Little women.jpeg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>LITTLE WOMEN</h2>
+                    <p class="writer">Louisa May Alcott.</p>
+                    <div class="categories"> Romance</div>
+                    <p class="book_price">23D<sub><del>25D</del></sub></p>
+                    
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+            
+
+                <div class="featurde_book_img">
+                    <img src="pictures/Reminders of him.jpeg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>REMINDERS OF HIM</h2>
+                    <p class="writer">Colleen Hoover</p>
+                    <div class="categories">Romance</div>
+                    <p class="book_price">3OD<sub><del>35D</del></sub></p>
+                    
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/the girl i've been.png">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>THE GIRL I'VE BEEN</h2>
+                    <p class="writer">Tess Sharpe</p>
+                    <div class="categories">Comedy,Thriller, Romance</div>
+                    <p class="book_price">25.5D<sub><del>28D</del></sub></p>
+                    
+                </div>               
+
+            </div>
+            
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/the people we keep.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>THE PEOPLE WE KEEP</h2>
+                    <p class="writer">Colleen Hoover</p>
+                    <div class="categories">Thriller, Romance</div>
+                    <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                   
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/Love and other words.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>LOVE AND OTHERS WORDS</h2>
+                    <p class="writer">Colleen Hoover</p>
+                    <div class="categories">Romance</div>
+                    <p class="book_price">45D<sub><del>50D</del></sub></p>
+                    
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/the great elone.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>THE GREAT ALONE</h2>
+                    <p class="writer">Kristin Hannah</p>
+                    <div class="categories">Thriller, Horror, Romance</div>
+                    <p class="book_price">35D<sub><del>40D</del></sub></p>
+                    
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/the gir on the train.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>THE GIRL ON THTE TRAIN</h2>
+                    <p class="writer">Paula Hawkins</p>
+                    <div class="categories">Thriller, Mystery, Romance</div>
+                    <p class="book_price">25.5D<sub><del>28D</del></sub></p>
+                  
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/the husband secret.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>THE HUSBAND SECRETS
+                    </h2>
+                    <p class="writer">Liane Moriarty</p>
+                    <div class="categories">Thriller, Romance</div>
+                    <p class="book_price">30D<sub><del>33.5D</del></sub></p>
+                   
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/the light we lost.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>THE LIGHT WE LOST</h2>
+                    <p class="writer">Jill Santopolo</p>
+                    <div class="categories">Thriller, Romance</div>
+                    <p class="book_price">25.5D<sub><del>28.6D</del></sub></p>
+                   
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/the immortales.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>THE IMMORTALISTS</h2>
+                    <p class="writer">Chloe Benjamin</p>
+                    <div class="categories">Thrille, Romance</div>
+                    <p class="book_price">23D<sub><del>28.6D</del></sub></p>
+                   
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/wish you were here.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>WISH YOU WERE HERE</h2>
+                    <p class="writer">Colleen Hoover</p>
+                    <div class="categories">Romance</div>
+                    <p class="book_price">25.5D<sub><del>28D</del></sub></p>
+            
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/the idea f you.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>THE IDEA OF YOU</h2>
+                    <p class="writer">Robinne Lee</p>
+                    <div class="categories">Thriller, Romance</div>
+                    <p class="book_price">25.5D<sub><del>28.6D</del></sub></p>
+                
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="pictures/a woman with no man.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>A WOMAN IS NO MAN</h2>
+                    <p class="writer">Etaf Rum</p>
+                    <div class="categories">Thriller, Romance</div>
+                    <p class="book_price">25.5D<sub><del>28.6D</del></sub></p>
+                
+                </div>               
+
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+
+
+    
+    <!--Arrivals-->
+
+    <div class="arrivals">
+        <h1>New Arrivals</h1>
+
+        <div class="arrivals_box">
+
+            <div class="arrivals_card">
+                <div class="arrivals_image">
+                    <img src="pictures/It ends with us.jpg">
+                </div>
+                <div class="arrivals_tag">
+                    <p><strong>IT ENDS WITH US</strong></p>
+                    <div class="arrivals_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="arrivals_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="arrivals_card">
+                <div class="arrivals_image">
+                    <img src="pictures/it starts with us.jpg">
+                </div>
+                <div class="arrivals_tag">
+                    <p><strong>IT STARTS WITH US</strong></p>
+                    <div class="arrivals_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="arrivals_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="arrivals_card">
+                <div class="arrivals_image">
+                    <img src="pictures/Never Never.jpeg">
+                </div>
+                <div class="arrivals_tag">
+                    <p><strong>NEVER NEVER</strong></p>
+                    <div class="arrivals_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="arrivals_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="arrivals_card">
+                <div class="arrivals_image">
+                    <img src="pictures/all your perfects.jpeg">
+                </div>
+                <div class="arrivals_tag">
+                    <p><strong>ALL YOUR PERFECTS</strong></p>
+                    <div class="arrivals_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="arrivals_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="arrivals_card">
+                <div class="arrivals_image">
+                    <img src="pictures/This Girl.jpg">
+                </div>
+                <div class="arrivals_tag">
+                    <p><strong>THIS GIRL</strong></p>
+                    <div class="arrivals_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="arrivals_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="arrivals_card">
+                <div class="arrivals_image">
+                    <img src="pictures/Finding cindrella.jpg">
+                </div>
+                <div class="arrivals_tag">
+                    <p><strong>FINDING CINDRELLA</strong></p>
+                    <div class="arrivals_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="arrivals_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="arrivals_card">
+                <div class="arrivals_image">
+                    <img src="pictures/Finding perfect.jpg">
+                </div>
+                <div class="arrivals_tag">
+                    <p><strong>FINDING PERFECT</strong></p>
+                    <div class="arrivals_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="arrivals_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="arrivals_card">
+                <div class="arrivals_image">
+                    <img src="pictures/Maybe Now.jpeg">
+                </div>
+                <div class="arrivals_tag">
+                    <p><strong>MAYBE NOW</strong></p>
+                    <div class="arrivals_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="arrivals_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="arrivals_card">
+                <div class="arrivals_image">
+                    <img src="pictures/Regretting you.jpg">
+                </div>
+                <div class="arrivals_tag">
+                    <p><strong>REGRETTING YOU</strong></p>
+                    <div class="arrivals_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="arrivals_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="arrivals_card">
+                <div class="arrivals_image">
+                    <img src="pictures/Maybe Not.jpeg">
+                </div>
+                <div class="arrivals_tag">
+                    <p><STRONG>MAYBE NOT</STRONG></p>
+                    <div class="arrivals_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <a href="#" class="arrivals_btn">Learn More</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        
+             
+
+    </div>
+       <!--reviews-->
+
+       <div class="reviews">
+        <h1>Reviews</h1>
+
+        <div class="review_box">
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="pictures/colleen hoover.webp">
+                </div>
+                <div class="card">
+                    <h2>Colleen Hoover</h2>
+                    <p>Colleen Hoover is an American author of romance and young adult novels. Hoover's novels often deal with heavy themes such as abuse, addiction, and mental health, and she is known for her ability to create complex, flawed characters that resonate with readers.
+                    </p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="pictures/louisa.jpeg">
+                </div>
+                <div class="card">
+                    <h2>Louisa May Alcott</h2>
+                    <p>In addition to Little Women, Alcott wrote several other novels and numerous short stories, poems, and essays. Her works often explore themes of family, love, and social justice
+                    </p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="pictures/tess sharpe.jpg">
+                </div>
+                <div class="card">
+                    <h2>Tess Sharpe</h2>
+                    <p>Tess Sharpe is known for writing stories with strong, complex female protagonists who often face difficult challenges and navigate complicated relationships.
+                    </p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="pictures/kristin hannah.jpeg">
+                </div>
+                <div class="card">
+                    <h2>Kristin Hannah</h2>
+                    <p>Hannah's novels often focus on relationships, family dynamics, and the experiences of women, and she is known for her ability to create emotionally powerful stories that resonate with readers.
+                    </p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+   <!--Banner-->
+
+
+
+
+
+
+
+<!--Blog-->
+
+<div class="blog">
+    <h1>Our Blog</h1>
+    <div class="blog_box">
+
+        <div class="blog_card">
+            <div class="blog_img">
+                <img src="pictures/blog_1.jpg">
+            </div>
+            <div class="blog_tag">
+                <h2> Book Club Discussions</h2>
+                <p>
+                    Encourage readers to join a book club or start their own, and provide discussion questions and prompts on your blog.
+                </p>
+                <div class="blog_icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="bay">
+                    <button class ="button" onclick="location.href='login.html'"> CHECK IT OUT!</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog_card">
+            <div class="blog_img">
+                <img src="pictures/blog_2.jpg">
+            </div>
+            <div class="blog_tag">
+                <h2>Book reviews</h2>
+                <p>
+                    Share book reviews on your blog to help your audience discover new titles they might enjoy and  Keep readers updated on new book releases in their favorite genres or from their favorite authors
+                </p>
+                <div class="blog_icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="bay">
+                    <button class ="button" onclick="location.href='login.html'"> CHECK IT OUT!</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog_card">
+            <div class="blog_img">
+                <img src="pictures/blog_3.jpg">
+            </div>
+            <div class="blog_tag">
+                <h2>Bookish Lifestyle:</h2>
+                <p>
+                    Share lifestyle content for book lovers, such as home decor ideas inspired by books, book-inspired recipes, and travel destinations for book lovers. and Share tips and tricks for book lovers, such as how to organize their bookshelves or how to read more efficiently..
+                </p>
+                <div class="blog_icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="bay">
+                    <button class ="button" onclick="location.href='login.html'"> CHECK IT OUT!</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!--Footer-->
+
+<footer>
+    <div class="footer_main">
+
+        <div class="tag">
+            <img src="pictures/books.png">
+
+        </div>
+
+        <div class="tag">
+            <h1>Contact Info</h1>
+            <a href="#"><i class="fa-solid fa-phone"></i>+21652308505</a>
+            <a href="#"><i class="fa-solid fa-phone"></i>+216 32 444 699</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i>bookly@gmail.com</a>
+            
+        </div>
+
+        <div class="tag">
+            <h1>Follow Us</h1>
+            <div class="social_link">
+                <a href="https://www.facebook.com/" class="fa-brands fa-facebook-f" style="color:#550B17; ">
+                <a href="https://www.instagram.com/" class="fa-brands fa-instagram"  style="color:#550B17;">
+                <a href="https://fr.linkedin.com/" class="fa-brands fa-linkedin-in"style="color:#550B17;"></a>
+            </div>
+            
+        </div>
+
+              
+        
+    </div>
+
+    <p class="end">Design By<span><i class="fa-regular fa-books"></i> BOOKLY</span></p>
+
+</footer>
+
+</body>
+<script>
+const carousel = document.querySelector('.carousel');
+const images = carousel.querySelectorAll('.carousel-item');
+let index = 0;
+
+function showImage() {
+  images.forEach(img => img.classList.remove('active'));
+  images[index].classList.add('active');
+  index++;
+  if (index >= images.length) {
+    index = 0;
+  }
+}
+
+showImage();
+
+setInterval(() => {
+  showImage();
+}, 3000);
+</script>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="pictures/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>   
+</head>
+<body>
+   <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item-container {
+    position: relative;
+    margin: 24px;
+    width: 320px;
+    height: 570px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.img-container,
+.body-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.img-container img {
+    width: 100%;
+}
+
+.body-container {
+    position: relative;
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #FDDDC8(24, 83, 122, 0.6);
+    opacity: 0;
+    transition: height linear 0.4s, opacity linear 0.2s;
+}
+
+.item-container:hover .overlay {
+    opacity: 1;
+    height: 150px;
+}
+
+.event-info {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    text-align: justify;
+}
+
+.title,
+.price {
+    color: #af082c;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 12px;
+}
+
+.info {
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    text-align: justify;
+}
+
+.separator {
+    width: 20%;
+    height: 6px;
+    background-color: #550B17;
+    margin-bottom: 16px;
+}
+
+.additional-info {
+    border-top: 1px solid #bbb;
+    margin-top: 12px;
+    padding: 28px;
+    padding-bottom: 0;
+}
+
+.additional-info .info {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.info i {
+    color: #af082c;
+    font-size: 1.1em;
+    margin-right: 4px;
+}
+
+.info span {
+    color: #18537a;
+    font-weight: bolder;
+}
+
+.action {
+    color: #fff;
+    border: 3px solid #fff;
+    background-color: transparent;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    outline: none;
+    cursor: pointer;
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: background-color 0.4s, top 0.4s;
+}
+
+.item-container:hover .action {
+    top: 50px;
+}
+
+.action:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+button {
+			background-color: #af082c;
+			color: white;
+			padding: 7px 5px;
+			text-align: center;
+			display: inline-block;
+			font-size: 16px;
+			margin: 30px;
+			cursor: pointer;
+			border: none;
+			border-radius: 5px;
+            box-shadow: 0 0 8px #550B17;
+		}
+/*Footer*/
+
+footer{
+    width: 100%;
+    background: #eaeaea;
+}
+
+footer .footer_main{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+footer .footer_main .tag{
+    margin: 10px 0;
+    cursor: pointer;
+    color: #af082c;
+}
+
+footer .footer_main .tag img{
+    width: 100px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+footer .footer_main .tag p{
+    width: 250px;
+    line-height: 22px;
+    text-align: justify;
+    cursor: pointer;
+}
+
+footer .footer_main .tag h1{
+    font-size: 25px;
+    margin: 25px 0;
+    color: #af082c;
+    cursor: pointer;
+}
+
+footer .footer_main .tag a{
+    display: block;
+    color: #550B17;
+    text-decoration: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+footer .footer_main .tag i{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+footer .footer_main .tag .social_link i{
+    margin: 0 5px;
+    cursor: pointer;
+    color: #550B17;
+}
+footer .footer_main .tag .social_link i :hover{
+    margin: 0 5px;
+    color: #089da1;
+    cursor: pointer;
+}
+
+footer .footer_main .tag .search{
+    width: 230px;
+    height: 30px;
+    background: rgba(202,202,202);
+    border-radius: 25px;
+}
+
+footer .footer_main .tag .search input{
+    width: 200px;
+    padding: 2px 0;
+    position: relative;
+    top: 17%;
+    left: 6%;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: none;
+    cursor: pointer;
+    margin: 3px;
+    
+}
+
+footer .footer_main .tag .search button{
+    padding: 7px 15px;
+    background: #550B17;
+    border: none;
+    margin-top: 15px;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+footer .end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: #000;
+    cursor: pointer;
+}
+
+footer .end span{
+    color: #550B17;
+    margin-left: 10px;
+    cursor: pointer;
+}
+   </style> 
+   
+   <body>
+    <button class="button" onclick="location.href='BOOKLY.html'">HOME</button>
+    <div class="container">
+        <div class="item-container">
+            <div class="img-container">
+                <img src="pictures/table of books.jpg" alt="Event image">
+            </div>
+
+            <div class="body-container">
+                <div class="overlay"></div>
+
+                <div class="event-info">
+                    <p class="title">Fiction lovers and novelists</p>
+                    <div class="separator"></div>
+                    
+                    <p class="price">Free</p>
+
+                    <div class="additional-info">
+                        <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Carthage ,Tunisia
+                        </p>
+                        <p class="info">
+                            <i class="far fa-calendar-alt"></i>
+                           Sep 19,2023 10:00 AM 
+                        </p>
+
+                        <p class="info description">
+                            Join us for an evening with best-selling author Colleen Hoover as we will discuss her latest novel, <strong>"It ends with us"</strong> .<span>more...</span>
+                        </p>
+                    </div>
+                </div>
+                <button class="action">Join us!</button>
+            </div>
+        </div>
+
+        <div class="item-container">
+            <div class="img-container">
+                <img src="pictures/this one.jpg" alt="Event image">
+            </div>
+
+            <div class="body-container">
+                <div class="overlay"></div>
+
+                <div class="event-info">
+                    <p class="title">The Overstory</p>
+                    <div class="separator"></div>
+                
+                    <p class="price">29D</p>
+
+                    <div class="additional-info">
+                        <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Bizerte, Tunisia
+                        </p>
+                        <p class="info">
+                            <i class="far fa-calendar-alt"></i>
+                            April 15th, 2023 10:00 AM 
+                        </p>
+
+                        <p class="info description">
+                            Join us for an intimate conversation with award-winning author Jane Doe as she discusses her latest memoir, <strong>"From Darkness to Light"</strong>. In this powerful book, Jane shares her personal journey of overcoming addiction and trauma to find healing and hope. <span>more...</span>
+                        </p>
+                    </div>
+                </div>
+                <button class="action">Join us ! </button>
+            </div>
+        </div>
+        <div class="item-container">
+            <div class="img-container">
+                <img src="pictures/beauty.jpg" alt="Event image">
+            </div>
+
+            <div class="body-container">
+                <div class="overlay"></div>
+
+                <div class="event-info">
+                    <p class="title">The Festival</p>
+                    <div class="separator"></div>
+                    
+                    <p class="price">30D</p>
+
+                    <div class="additional-info">
+                        <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Les Berges du Lac 2 
+                        </p>
+                        <p class="info">
+                            <i class="far fa-calendar-alt"></i>
+                            June 10th, 2023- 10:00 AM 
+                        </p>
+
+                        <p class="info description">
+                            Celebrate the release of local author Sarah Johnson's debut novel, <strong>"The Art of Letting Go"</strong>. In this heartwarming story, Sarah weaves together themes of love, loss, and second chances as two strangers are brought together by fate and discover the healing power of art. <span>more...</span>
+                        </p>
+                    </div>
+                </div>
+                <button class="action">Join us !</button>
+            </div>
+        </div>
+
+        <div class="item-container">
+            <div class="img-container">
+                <img src="pictures/anti romantic.jpg" alt="Event image">
+            </div>
+
+            <div class="body-container">
+                <div class="overlay"></div>
+
+                <div class="event-info">
+                    <p class="title">Anti-romantic Team</p>
+                    <div class="separator"></div>
+                    <p class="price">35D</p>
+
+                    <div class="additional-info">
+                        <p class="info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Sousse
+                        </p>
+                        <p class="info">
+                            <i class="far fa-calendar-alt"></i>
+                            Sat, Sep 19, 10:00 AM EDT
+                        </p>
+
+                        <p class="info description">
+                            Join us for an evening with Pulitzer Prize-winning author John Doe as we will discuss his latest book, <strong>"The Future of Democracy"</strong>. In this timely and insightful work, John examines the challenges facing democracies around the world and offers a compelling vision for the future of democratic governance. <span>more...</span>
+                        </p>
+                    </div>
+                </div>
+                <button class="action">Join us !</button>
+            </div>
+        </div>
+    </div>
+ 
+
+</body>
+ <!--Footer-->
+
+ <footer>
+    <div class="footer_main">
+
+        <div class="tag">
+            <img src="pictures/books.png">
+
+        </div>
+
+        <div class="tag">
+            <h1>Contact Info</h1>
+            <a href="#"><i class="fa-solid fa-phone"></i>+21652308505</a>
+            <a href="#"><i class="fa-solid fa-phone"></i>+216 32 444 699</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i>bookly@gmail.com</a>
+            
+        </div>
+
+        <div class="tag">
+            <h1>Follow Us</h1>
+            <div class="social_link">
+                <a href="https://www.facebook.com/" class="fa-brands fa-facebook-f" style="color:#550B17; ">
+                <a href="https://www.instagram.com/" class="fa-brands fa-instagram"  style="color:#550B17;">
+                <a href="https://fr.linkedin.com/" class="fa-brands fa-linkedin-in"style="color:#550B17;"></a>
+            </div>
+            
+        </div>
+
+        <div class="tag">
+            <h1>Complaint</h1>
+            <div class="search">
+                <input type="text" placeholder="E-mail">
+
+                <input type="text" placeholder=" ID_user">
+                <button type="submit">Send</button>
+            </div>                
+        </div>            
+        
+    </div>
+
+    <p class="end">Design By<span><i class="fa-regular fa-books"></i> BOOKLY</span></p>
+
+</footer>
+
+</html>
